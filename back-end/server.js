@@ -15,4 +15,4 @@ mongoose.connect('mongodb://localhost:27017/museum', {
 });
 
 
-app.listen(3001, () => console.log('Server listening on port 3001!'));
+app.listen(3000, () => console.log('Server listening on port 3000!'));
