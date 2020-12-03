@@ -26,9 +26,10 @@ mongoose.connect('mongodb://localhost:27017/journal', {
 
 const itemSchema = new mongoose.Schema({
   name: String,
-  message: String,
-  date: String,
   path: String,
+  message: String,
+  // date: String,
+  // path: String,
 });
 
 const Item = mongoose.model('Item', itemSchema);
@@ -46,8 +47,9 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
 app.post('/api/items', async (req, res) => {
 
   const item = new Item({
-    name: req.body.title,
-    message: req.body.path,
+    name: req.body.name,
+    path: req.body.path,
+    message: req.body.description,
     // date: ,
     // path:
   });

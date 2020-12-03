@@ -83,7 +83,7 @@ export default {
         });
         this.addItem = r2.data;
       } catch (error) {
-      console.log("erroe in async upload");
+      console.log("error in async upload");
         alert(error);
       }
     },
