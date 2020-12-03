@@ -79,6 +79,11 @@ export default {
 
 
 <style scoped>
+.admin {
+  display: flex;
+  flex-direction: column;
+}
+
 .image h2 {
   font-style: italic;
   font-size: 1em;
