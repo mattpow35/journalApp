@@ -8,7 +8,7 @@
     <div class="add">
       <div class="form">
         <input v-model="name" placeholder="Name">
-        <textarea v-model="message" placeholder="Your entry"></textarea>
+        <textarea class="textarea" v-model="message" placeholder="Your entry"></textarea>
         <p></p>
         <input type="file" name="photo" @change="fileChanged">
         <button @click="upload">Upload</button>
@@ -152,5 +152,19 @@ button {
 .suggestion:hover {
   background-color: #5BDEFF;
   color: #fff;
+}
+
+.textarea {
+
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+
+
 }
 </style>
