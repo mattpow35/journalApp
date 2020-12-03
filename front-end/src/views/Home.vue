@@ -13,12 +13,15 @@
       <div class="ticket">
         <div class="problem">
 
+
+          <img :src="entry.path" />
+          <div id="titleCaption">
           <h3><b>Posted by: {{entry.name}}</b></h3>
           <p>{{entry.date}}</p>
-          <img :src="entry.path" />
           <p id="entry">{{entry.message}}</p>
           <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
           <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)" >Delete</button>
+          </div>
 
         </div>
       </div>
@@ -112,8 +115,7 @@ export default {
   margin: 0 0 1.5em;
   display: inline-block;
   width: 100%;
-  border-style: solid;
-  border-color: gray;
+
 }
 
 .image img {
@@ -129,6 +131,10 @@ export default {
 
 #deleteButton {
 float :right;
+}
+#titleCaption {
+border-style: solid;
+border-color: gray;
 }
 
 /* Masonry on large screens */
