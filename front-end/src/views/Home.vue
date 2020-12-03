@@ -9,7 +9,7 @@
   </div>
   <section class="image-gallery">
     <div class="image" v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
-      <hr />
+    
           <img :src="entry.path" />
           <div id="titleCaption">
             <h3><b>Posted by: {{entry.name}}</b></h3>
