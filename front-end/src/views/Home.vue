@@ -104,7 +104,7 @@ export default {
 }
 
 #entry {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 /* Masonry on large screens */
