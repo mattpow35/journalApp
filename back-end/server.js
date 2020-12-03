@@ -49,7 +49,7 @@ app.post('/api/items', async (req, res) => {
   const item = new Item({
     name: req.body.name,
     path: req.body.path,
-    message: req.body.description,
+    message: req.body.message,
     // date: ,
     // path:
   });
