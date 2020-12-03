@@ -28,7 +28,7 @@ const itemSchema = new mongoose.Schema({
   name: String,
   path: String,
   message: String,
-  // date: String,
+  date: String,
   // path: String,
 });
 
@@ -50,7 +50,7 @@ app.post('/api/items', async (req, res) => {
     name: req.body.name,
     path: req.body.path,
     message: req.body.message,
-    // date: ,
+    date: req.body.date,
     // path:
   });
   try {

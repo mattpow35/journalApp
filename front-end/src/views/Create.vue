@@ -33,6 +33,7 @@ export default {
     return {
       name: "",
       message: "",
+      date: "",
       file: null,
       addItem: null,
       items: [],
@@ -48,6 +49,8 @@ export default {
   },
   methods: {
     async upload() {
+    var d = new Date()
+
       try {
         const formData = new FormData();
         formData.append('photo', this.file, this.file.name)
@@ -56,6 +59,7 @@ export default {
           name: this.name,
           path: r1.data.path,
           message: this.message,
+          date: d.toDateString(),
         });
         this.addItem = r2.data;
       } catch (error) {
