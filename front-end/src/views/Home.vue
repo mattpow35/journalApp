@@ -144,14 +144,16 @@ flex-direction: column;
   border-color: gray;
 }
 
-#deleteButton {
-  align-self: flex-end;
-}
 
 #likeAndDelete{
 	display: flex;
 	flex-direction: row;
 }
+
+#deleteButton {
+  align-self: flex-end;
+}
+
 
 /* Masonry on large screens */
 @media only screen and (min-width: 1024px) {
