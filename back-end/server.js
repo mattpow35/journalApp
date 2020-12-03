@@ -48,8 +48,8 @@ app.post('/api/items', async (req, res) => {
   const item = new Item({
     name: req.body.title,
     message: req.body.path,
-    date: New Date.toDateString(),
-    path: 
+    date: New Date().toDateString(),
+    path:
   });
   try {
     await item.save();
