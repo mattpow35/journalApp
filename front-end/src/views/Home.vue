@@ -10,10 +10,6 @@
   <section class="image-gallery">
     <div class="image" v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
       <hr />
-      <div class="ticket">
-        <div class="problem">
-
-
           <img :src="entry.path" />
           <div id="titleCaption">
             <h3><b>Posted by: {{entry.name}}</b></h3>
@@ -25,8 +21,7 @@
 </div>
           </div>
 
-        </div>
-      </div>
+
     </div>
   </section>
 
