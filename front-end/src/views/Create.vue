@@ -19,30 +19,7 @@
         <img :src="addItem.path" />
       </div>
     </div>
-  <div class="heading">
-    <div class="circle">2</div>
-    <h2>Edit/Delete an Item</h2>
-  </div>
-  <div class="edit">
-    <div class="form">
-      <input v-model="findTitle" placeholder="Search">
-      <div class="suggestions" v-if="suggestions.length > 0">
-        <div class="suggestion" v-for="s in suggestions" :key="s.id" @click="selectItem(s)">{{s.title}}
-        </div>
-      </div>
-    </div>
-    <div class="upload" v-if="findItem">
-      <input v-model="findItem.title">
-      <textarea v-model="findItem.description"></textarea>
-      <p></p>
-      <img :src="findItem.path" />
-    </div>
-    <div class="actions" v-if="findItem">
-      <button @click="deleteItem(findItem)">Delete</button>
-      <button @click="editItem(findItem)">Edit</button>
-    </div>
-  </div>
-</div>
+
 
 </template>
 
@@ -62,13 +39,10 @@ export default {
     }
   },
   computed: {
-    suggestions() {
-      let items = this.items.filter(item => item.title.toLowerCase().startsWith(this.findTitle.toLowerCase()));
-      return items.sort((a, b) => a.title > b.title);
-    }
+
   },
   created() {
-    this.getItems();
+
   },
   methods: {
     async upload() {
@@ -90,42 +64,8 @@ export default {
     fileChanged(event) {
       this.file = event.target.files[0]
     },
-    async getItems() {
-      try {
-        let response = await axios.get("/api/items");
-        this.items = response.data;
-        return true;
-      } catch (error) {
-        alert(error);
-      }
-    },
-    selectItem(item) {
-      this.findTitle = "";
-      this.findItem = item;
-    },
-    async deleteItem(item) {
-      try {
-        await axios.delete("/api/items/" + item._id);
-        this.findItem = null;
-        this.getItems();
-        return true;
-      } catch (error) {
-        alert(error);
-      }
-    },
-    async editItem(item) {
-      try {
-        await axios.put("/api/items/" + item._id, {
-          title: this.findItem.title,
-          description: this.findItem.description,
-        });
-        this.findItem = null;
-        this.getItems();
-        return true;
-      } catch (error) {
-        alert(error);
-      }
-    },
+
+    
   }
 }
 </script>
