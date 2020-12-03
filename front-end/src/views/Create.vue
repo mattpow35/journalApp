@@ -16,6 +16,7 @@
       <div class="upload" v-if="addItem">
         <h2>{{addItem.name}}</h2>
         <p> Descripton: {{addItem.message}}</p>
+        <p> {{addItem.path}}</p>
         <img :src="addItem.path" />
       </div>
     </div>
