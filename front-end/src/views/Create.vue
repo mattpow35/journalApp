@@ -79,9 +79,7 @@ export default {
 
 
 <style scoped>
-.admin {
 
-}
 
 .image h2 {
   font-style: italic;
@@ -160,7 +158,7 @@ button {
 
 .textarea {
 
-  width: 100%;
+  width: 50%;
   height: 150px;
   box-sizing: border-box;
   border: 2px solid #ccc;
