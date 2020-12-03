@@ -60,6 +60,7 @@ export default {
           path: r1.data.path,
           message: this.message,
           date: d.toDateString(),
+          likes: 0,
         });
         this.addItem = r2.data;
       } catch (error) {
