@@ -19,6 +19,7 @@
         <img :src="addItem.path" />
       </div>
     </div>
+  </div>
 
 
 </template>
@@ -65,7 +66,7 @@ export default {
       this.file = event.target.files[0]
     },
 
-    
+
   }
 }
 </script>
