@@ -2,25 +2,25 @@
 <div>
   <h1>My Journal</h1>
   <div v-if="items.length === 0">
-    <hr/>
+    <hr />
     <div class="problem">
       <p>You currently have no journal entries.</p>
     </div>
   </div>
   <section class="image-gallery">
-  <div class="image" v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
-    <hr/>
-    <div class="ticket">
-      <div class="problem">
+    <div class="image" v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
+      <hr />
+      <div class="ticket">
+        <div class="problem">
 
-        <p><b>{{entry.name}}</b></p>
-        <p><i>{{entry.message}}</i></p>
-        <img :src="entry.path"/>
-        <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
+          <h3><b>Posted by: {{entry.name}}</b></h3>
+          <p>{{entry.message}}</p>
+          <img :src="entry.path" />
+          <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
+        </div>
       </div>
     </div>
-  </div>
   </section>
 
 </div>
@@ -51,14 +51,20 @@ export default {
       }
     },
     async deleteItem(item) {
-      try {
-        await axios.delete("/api/items/" + item._id);
-      //this.findItem = null;
-        this.getItems();
-        return true;
-      } catch (error) {
-        alert(error);
+      var password = prompt("Please enter the password to delete", "");
+      if (password == "delete") {
+        try {
+          await axios.delete("/api/items/" + item._id);
+          //this.findItem = null;
+          this.getItems();
+          return true;
+        } catch (error) {
+          alert(error);
+        }
+      } else {
+        alert("Incorrect Password");
       }
+
     },
 
 
