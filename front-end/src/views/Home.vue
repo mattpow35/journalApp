@@ -16,11 +16,11 @@
 
           <img :src="entry.path" />
           <div id="titleCaption">
-          <h3><b>Posted by: {{entry.name}}</b></h3>
-          <p>{{entry.date}}</p>
-          <p id="entry">{{entry.message}}</p>
-          <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
-          <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)" >Delete</button>
+            <h3><b>Posted by: {{entry.name}}</b></h3>
+            <p>{{entry.date}}</p>
+            <p id="entry">{{entry.message}}</p>
+            <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
+            <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button>
           </div>
 
         </div>
@@ -73,17 +73,17 @@ export default {
 
     },
     async addLike(item) {
-    try {
-      await axios.put("/api/items/" + item._id, {
-        likes: item.likes + 1,
+      try {
+        await axios.put("/api/items/" + item._id, {
+          likes: item.likes + 1,
 
-      });
-      this.getItems();
-      return true;
-    } catch (error) {
-      alert(error);
-    }
-  },
+        });
+        this.getItems();
+        return true;
+      } catch (error) {
+        alert(error);
+      }
+    },
 
 
   },
@@ -125,17 +125,19 @@ export default {
 #entry {
   font-size: 18px;
 }
+
 #likes {
   font-size: 18px;
 }
 
 #deleteButton {
-align-self:right;
+  align-self: right;
 }
+
 #titleCaption {
-display: flex;
-border-style: solid;
-border-color: gray;
+  
+  border-style: solid;
+  border-color: gray;
 }
 
 /* Masonry on large screens */
