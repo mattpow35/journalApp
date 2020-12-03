@@ -16,8 +16,8 @@
           <h3><b>Posted by: {{entry.name}}</b></h3>
           <p>{{entry.date}}</p>
           <img :src="entry.path" />
-          <p class="entry">{{entry.message}}</p>
-          <p class="entry"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
+          <p id="entry">{{entry.message}}</p>
+          <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
           <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
         </div>
@@ -118,7 +118,10 @@ export default {
   width: 100%;
 }
 
-.entry {
+#entry {
+  font-size: 18px;
+}
+#likes {
   font-size: 18px;
 }
 
