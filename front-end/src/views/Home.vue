@@ -16,7 +16,7 @@
             <p>{{entry.date}}</p>
             <p id="entry">{{entry.message}}</p>
 		<div id="likeAndDelete">
-            <div><p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>" "{{entry.likes}}</p></div>
+            <div><p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>  {{entry.likes}}</p></div>
             <div id="deleteButton" ><button  type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button></div>
 </div>
           </div>
