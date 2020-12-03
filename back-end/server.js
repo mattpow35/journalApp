@@ -44,11 +44,11 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
 });
 
 app.post('/api/items', async (req, res) => {
-  var d = New Date();
+
   const item = new Item({
     name: req.body.title,
     message: req.body.path,
-    date: d.toDateString(),
+    date: New Date.toDateString(),
     path: 
   });
   try {
