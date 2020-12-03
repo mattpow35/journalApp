@@ -54,6 +54,7 @@ app.post('/api/items', async (req, res) => {
     // path:
   });
   try {
+    console.log("trying to save new item");
     await item.save();
     res.send(item);
   } catch (error) {
