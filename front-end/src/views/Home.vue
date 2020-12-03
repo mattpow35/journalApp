@@ -9,7 +9,7 @@
   </div>
   <section class="image-gallery">
     <div class="image" v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
-    
+
           <img :src="entry.path" />
           <div id="titleCaption">
             <h3><b>Posted by: {{entry.name}}</b></h3>
@@ -135,8 +135,7 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
 flex-direction: column;
-  border-style: solid;
-  border-color: gray;
+  
 }
 
 
