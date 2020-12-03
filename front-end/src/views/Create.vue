@@ -80,8 +80,7 @@ export default {
 
 <style scoped>
 .admin {
-  display: flex;
-  flex-direction: column;
+
 }
 
 .image h2 {
@@ -106,7 +105,8 @@ font-size: 12;
 
 .add,
 .edit {
-  display: flex;
+display: flex;
+flex-direction: column;
 }
 
 .circle {
