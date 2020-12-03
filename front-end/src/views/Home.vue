@@ -20,8 +20,8 @@
             <p>{{entry.date}}</p>
             <p id="entry">{{entry.message}}</p>
 		<div id="likeAndDelete">
-            <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
-            <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button>
+            <div><p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p></div>
+            <div id="deleteButton" ><button  type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button></div>
 </div>
           </div>
 
@@ -128,9 +128,7 @@ export default {
   font-size: 18px;
 }
 
-#likes {
-  font-size: 18px;
-}
+
 
 
 
@@ -156,6 +154,9 @@ flex-direction: column;
 #deleteButton {
    margin-left: auto;
    justify-self: flex-end;
+}
+#likes {
+  font-size: 18px;
 }
 
 
