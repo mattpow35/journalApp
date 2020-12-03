@@ -17,7 +17,7 @@
           <p>{{entry.date}}</p>
           <img :src="entry.path" />
           <p id="entry">{{entry.message}}</p>
-           <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span> <p>{{entry.likes}}</p>
+          <p> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
           <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
         </div>
