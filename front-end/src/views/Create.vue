@@ -14,9 +14,9 @@
         <button @click="upload">Upload</button>
       </div>
       <div class="upload" v-if="addItem">
+        <h1>Upload Successful!</h1>
         <h2>{{addItem.name}}</h2>
-        <p> Descripton: {{addItem.message}}</p>
-        <p> {{addItem.path}}</p>
+        <p> Caption: {{addItem.message}}</p>
         <img :src="addItem.path" />
       </div>
     </div>
@@ -64,10 +64,8 @@ export default {
         this.addItem = r2.data;
       } catch (error) {
       console.log("error in async upload");
-      if(error == 413) {
-      alert("File too large");
-      }
-        alert(error);
+
+        alert("Unable to upload photo, file may be too large or wrong file type.");
       }
     },
     fileChanged(event) {
