@@ -158,7 +158,7 @@ button {
 
 .textarea {
 
-  width: 50%;
+
   height: 150px;
   box-sizing: border-box;
   border: 2px solid #ccc;
