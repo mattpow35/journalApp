@@ -1,21 +1,21 @@
 <template>
 <div class="admin">
-  <h1>The Admin Page!</h1>
+  <h1>Add a new Journal Entry!</h1>
   <div class="heading">
       <div class="circle">1</div>
       <h2>Add an Item</h2>
     </div>
     <div class="add">
       <div class="form">
-        <input v-model="title" placeholder="Title">
-        <textarea v-model="description" placeholder="Item description"></textarea>
+        <input v-model="name" placeholder="Name">
+        <textarea v-model="message" placeholder="Your entry"></textarea>
         <p></p>
         <input type="file" name="photo" @change="fileChanged">
         <button @click="upload">Upload</button>
       </div>
       <div class="upload" v-if="addItem">
-        <h2>{{addItem.title}}</h2>
-        <p> Descripton: {{addItem.description}}</p>
+        <h2>{{addItem.name}}</h2>
+        <p> Descripton: {{addItem.message}}</p>
         <img :src="addItem.path" />
       </div>
     </div>
@@ -52,8 +52,8 @@ export default {
   name: 'Admin',
   data() {
     return {
-      title: "",
-      description: "",
+      name: "",
+      message: "",
       file: null,
       addItem: null,
       items: [],
@@ -77,9 +77,9 @@ export default {
         formData.append('photo', this.file, this.file.name)
         let r1 = await axios.post('/api/photos', formData);
         let r2 = await axios.post('/api/items', {
-          title: this.title,
+          name: this.name,
           path: r1.data.path,
-          description: this.description,
+          message: this.message,
         });
         this.addItem = r2.data;
       } catch (error) {
