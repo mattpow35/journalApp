@@ -63,6 +63,16 @@ app.post('/api/items', async (req, res) => {
   }
 });
 
+app.get('/api/items', async (req, res) => {
+  try {
+    let items = await Item.find();
+    res.send(items);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 
 
 
