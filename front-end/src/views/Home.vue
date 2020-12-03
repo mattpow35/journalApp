@@ -14,7 +14,7 @@
         <div class="problem">
 
           <h3><b>Posted by: {{entry.name}}</b></h3>
-          <p>{{entry.message}}</p>
+          <p id="entry">{{entry.message}}</p>
           <img :src="entry.path" />
           <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
@@ -101,6 +101,10 @@ export default {
 
 .image img {
   width: 100%;
+}
+
+#entry {
+  font-size: 24px;
 }
 
 /* Masonry on large screens */
