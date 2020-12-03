@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>My Journal</h1>
+  <h1>Shared Journal</h1>
   <div v-if="items.length === 0">
     <hr />
     <div class="problem">
@@ -16,7 +16,7 @@
             <p>{{entry.date}}</p>
             <p id="entry">{{entry.message}}</p>
 		<div id="likeAndDelete">
-            <div><p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p></div>
+            <div><p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>" "{{entry.likes}}</p></div>
             <div id="deleteButton" ><button  type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button></div>
 </div>
           </div>
@@ -135,7 +135,7 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
 flex-direction: column;
-  
+
 }
 
 
