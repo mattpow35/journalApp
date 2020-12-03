@@ -135,6 +135,7 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
 flex-direction: column;
+padding-left: 5px;
 
 }
 
@@ -143,7 +144,7 @@ flex-direction: column;
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-  padding-left: 5px;
+
 
 }
 
