@@ -100,7 +100,7 @@ export default {
 /* Masonry on large screens */
 @media only screen and (min-width: 1024px) {
   .image-gallery {
-    column-count: 1;
+    column-count: 2;
   }
 }
 
