@@ -130,14 +130,18 @@ export default {
   font-size: 18px;
 }
 
-#deleteButton {
-  align-self: right;
-}
+
 
 #titleCaption {
+  display: flex;
+  justify-content: left;
   
   border-style: solid;
   border-color: gray;
+}
+
+#deleteButton {
+  align-self: right;
 }
 
 /* Masonry on large screens */
