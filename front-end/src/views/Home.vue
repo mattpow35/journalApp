@@ -16,6 +16,7 @@
         <p><b>{{entry.name}}</b></p>
         <p><i>{{entry.message}}</i></p>
         <img :src="entry.path"/>
+        <button v-on:click="removeFromCart(entry)" class="auto">Delete</button>
 
       </div>
     </div>
@@ -49,6 +50,17 @@ export default {
         alert(error);
       }
     },
+    async deleteItem(item) {
+      try {
+        await axios.delete("/api/items/" + item._id);
+      //this.findItem = null;
+        this.getItems();
+        return true;
+      } catch (error) {
+        alert(error);
+      }
+    },
+
 
   },
 }

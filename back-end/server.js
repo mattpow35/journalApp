@@ -73,6 +73,18 @@ app.get('/api/items', async (req, res) => {
   }
 });
 
+app.delete('/api/items/:id', async (req, res) => {
+    try {
+      await Item.deleteOne({
+        _id: req.params.id
+      });
+      res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+});
+
 
 
 
