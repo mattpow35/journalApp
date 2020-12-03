@@ -93,9 +93,7 @@ app.put('/api/items/:id', async (req, res) => {
       });
       item.likes = req.body.likes;
 
-	   
       item.save();
-
       res.sendStatus(200);
     } catch (error) {
       console.log(error);
