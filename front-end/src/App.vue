@@ -3,9 +3,8 @@
   <div class="header">
     <h1>Journal Sharing</h1>
     <div id="nav">
-      <router-link to="/">My Journal</router-link> |
-      <router-link to="/create">New Journal Entry</router-link> |
-      <router-link to="/public">Public Journal</router-link>
+      <router-link to="/">Shared Journal</router-link> |
+      <router-link to="/create">New Journal Entry</router-link>
     </div>
   </div>
   <div class="content">
