@@ -14,6 +14,7 @@
         <div class="problem">
 
           <h3><b>Posted by: {{entry.name}}</b></h3>
+          <p>{{entry.date}}</p>
           <p id="entry">{{entry.message}}</p>
           <img :src="entry.path" />
           <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
