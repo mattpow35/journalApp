@@ -6,13 +6,14 @@
       <div class="form">
         <input v-model="name" placeholder="Name">
         <textarea class="textarea" v-model="message" placeholder="Your entry"></textarea>
-        <p>Choose a photo to upload!</p>
+
         <input type="file" name="photo" @change="fileChanged">
+          <p>Choose a photo to upload!</p>
         <button @click="upload">Upload</button>
       </div>
       <div class="upload" v-if="addItem">
         <h1>Upload Successful!</h1>
-        <h2>{{addItem.name}}</h2>
+        <h2>Your Name: {{addItem.name}}</h2>
         <p> Caption: {{addItem.message}}</p>
         <img :src="addItem.path" />
       </div>
