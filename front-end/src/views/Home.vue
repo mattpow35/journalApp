@@ -119,7 +119,7 @@ export default {
   width: 100%;
   border-style: solid;
   border-color: gray;
-  border-top: 0;
+  border-top: 0px;
 }
 
 .image img {
