@@ -145,7 +145,7 @@ flex-direction: column;
 
 #likeAndDelete{
 	display: flex;
-	width: inherit;
+	width: 100%;
 	flex-direction: row;
 	border-style: solid;
 	border-color: blue;
