@@ -14,7 +14,7 @@
 
         <p><b>{{entry.name}}</b></p>
         <p><i>{{entry.message}}</i></p>
-        <img :src="item.path"/>
+        <img :src="entry.path"/>
 
       </div>
     </div>
