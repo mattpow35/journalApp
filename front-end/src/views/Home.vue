@@ -7,14 +7,14 @@
       <p>You currently have no journal entries.</p>
     </div>
   </div>
-  <div v-for="entry in entries.slice().reverse()" v-bind:key="entry.id">
+  <div v-for="entry in items.slice().reverse()" v-bind:key="entry.id">
     <hr/>
     <div class="ticket">
       <div class="problem">
 
-        <p><b>{{entry.title}}</b></p>
-        <p><i>{{entry.date}}</i></p>
-        <p>{{entry.problem}}</p>
+        <p><b>{{entry.name}}</b></p>
+        <p><i>{{entry.message}}</i></p>
+        <img :src="item.path"/>
 
       </div>
     </div>
@@ -24,15 +24,30 @@
 </template>
 
 <script>
+// @ is an alias to /src
+import axios from 'axios';
+
 export default {
-  name: "home",
+  name: 'Home',
   data() {
-    return {}
-  },
-  computed: {
-    entries() {
-      return this.$root.$data.getEntries();
+    return {
+      items: [],
     }
-  }
+  },
+  created() {
+    this.getItems();
+  },
+  methods: {
+    async getItems() {
+      try {
+        let response = await axios.get("/api/items");
+        this.items = response.data;
+        return true;
+      } catch (error) {
+        alert(error);
+      }
+    },
+
+  },
 }
 </script>
