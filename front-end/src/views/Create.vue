@@ -59,6 +59,9 @@ export default {
         this.addItem = r2.data;
       } catch (error) {
       console.log("error in async upload");
+      if(error == 413) {
+      alert("File too large");
+      }
         alert(error);
       }
     },
