@@ -16,7 +16,7 @@
         <p><b>{{entry.name}}</b></p>
         <p><i>{{entry.message}}</i></p>
         <img :src="entry.path"/>
-        <button v-on:click="removeFromCart(entry)" class="auto">Delete</button>
+        <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
       </div>
     </div>
