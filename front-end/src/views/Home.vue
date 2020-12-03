@@ -17,7 +17,7 @@
           <p>{{entry.date}}</p>
           <img :src="entry.path" />
           <p id="entry">{{entry.message}}</p>
-
+           <p><span v-on:click="addLike(entry)">^</span> {{entry.likes}}</p>
           <button v-on:click="deleteItem(entry)" class="auto">Delete</button>
 
         </div>
@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       items: [],
+
     }
   },
   created() {
@@ -68,6 +69,18 @@ export default {
       }
 
     },
+    async addLike(item) {
+    try {
+      await axios.put("/api/items/" + item._id, {
+        likes: item.likes + 1,
+
+      });
+      this.getItems();
+      return true;
+    } catch (error) {
+      alert(error);
+    }
+  },
 
 
   },

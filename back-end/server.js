@@ -29,6 +29,7 @@ const itemSchema = new mongoose.Schema({
   path: String,
   message: String,
   date: String,
+  likes: Int,
   // path: String,
 });
 
@@ -51,7 +52,7 @@ app.post('/api/items', async (req, res) => {
     path: req.body.path,
     message: req.body.message,
     date: req.body.date,
-    // path:
+    likes: 0,
   });
   try {
     console.log("trying to save new item");
@@ -78,6 +79,23 @@ app.delete('/api/items/:id', async (req, res) => {
       await Item.deleteOne({
         _id: req.params.id
       });
+      res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+});
+
+app.put('/api/items/:id', async (req, res) => {
+    try {
+      let item = await Item.findOne({
+        _id: req.params.id
+      });
+      item.likes = req.body.likes;
+
+	   
+      item.save();
+
       res.sendStatus(200);
     } catch (error) {
       console.log(error);

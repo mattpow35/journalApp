@@ -158,7 +158,6 @@ button {
 
   width: 100%;
   height: 150px;
-  
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
