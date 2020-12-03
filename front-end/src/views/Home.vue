@@ -130,9 +130,10 @@ export default {
 }
 
 #deleteButton {
-float :right;
+align-self:right;
 }
 #titleCaption {
+display: flex;
 border-style: solid;
 border-color: gray;
 }
