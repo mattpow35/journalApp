@@ -1,15 +1,12 @@
 <template>
 <div class="admin">
   <h1>Add a new Journal Entry!</h1>
-  <div class="heading">
-      <div class="circle">1</div>
-      <h2>Add an Item</h2>
-    </div>
+
     <div class="add">
       <div class="form">
         <input v-model="name" placeholder="Name">
         <textarea class="textarea" v-model="message" placeholder="Your entry"></textarea>
-        <p></p>
+        <p>Choose a photo to upload!</p>
         <input type="file" name="photo" @change="fileChanged">
         <button @click="upload">Upload</button>
       </div>
