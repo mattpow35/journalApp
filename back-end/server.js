@@ -29,7 +29,7 @@ const itemSchema = new mongoose.Schema({
   path: String,
   message: String,
   date: String,
-  likes: int,
+  likes: Number,
   // path: String,
 });
 
