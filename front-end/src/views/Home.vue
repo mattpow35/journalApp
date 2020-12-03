@@ -122,6 +122,8 @@ export default {
 
 .image img {
   width: 100%;
+  border-style: solid;
+  border-color: gray;
 }
 
 #entry {
@@ -147,7 +149,7 @@ flex-direction: column;
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-	
+
 }
 
 #deleteButton {
