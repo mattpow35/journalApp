@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <h1>My Journal</h1>
+  <div v-if="this.$root.$data.entries.length === 0">
+    <hr/>
+    <div class="problem">
+      <p>You currently have no journal entries.</p>
+    </div>
   </div>
+  <div v-for="entry in entries.slice().reverse()" v-bind:key="entry.id">
+    <hr/>
+    <div class="ticket">
+      <div class="problem">
+
+        <p><b>{{entry.title}}</b></p>
+        <p><i>{{entry.date}}</i></p>
+        <p>{{entry.problem}}</p>
+
+      </div>
+    </div>
+  </div>
+
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  name: "home",
+  data() {
+    return {}
+  },
+  computed: {
+    entries() {
+      return this.$root.$data.getEntries();
+    }
   }
 }
 </script>

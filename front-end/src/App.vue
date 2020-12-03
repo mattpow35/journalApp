@@ -1,20 +1,36 @@
 <template>
-  <div id="app">
+<div id="app">
+  <div class="header">
+    <h1>Journal Sharing</h1>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">My Journal</router-link> |
+      <router-link to="/create">New Journal Entry</router-link> |
+      <router-link to="/public">Public Journal</router-link>
     </div>
-    <router-view/>
   </div>
+  <div class="content">
+    <router-view />
+  </div>
+</div>
 </template>
 
 <style>
+body {
+  margin: 0px;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #D2B48C;
+  padding: 10px 100px;
+  color: white;
 }
 
 #nav {
@@ -23,10 +39,14 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #fff;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #FFC300;
+}
+
+.content {
+  padding: 10px 100px;
 }
 </style>
