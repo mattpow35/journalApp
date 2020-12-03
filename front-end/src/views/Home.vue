@@ -18,7 +18,7 @@
           <img :src="entry.path" />
           <p id="entry">{{entry.message}}</p>
           <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
-          <button type="button" class="btn btn-danger" v-on:click="deleteItem(entry)" >Delete</button>
+          <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)" >Delete</button>
 
         </div>
       </div>
@@ -123,6 +123,10 @@ export default {
 }
 #likes {
   font-size: 18px;
+}
+
+#deleteButton {
+float :right;
 }
 
 /* Masonry on large screens */
