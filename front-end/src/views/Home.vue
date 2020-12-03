@@ -135,7 +135,7 @@ export default {
 #titleCaption {
   display: flex;
   justify-content: left;
-  
+  align-items: left;
   border-style: solid;
   border-color: gray;
 }
