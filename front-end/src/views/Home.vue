@@ -112,6 +112,8 @@ export default {
   margin: 0 0 1.5em;
   display: inline-block;
   width: 100%;
+  border-style: solid;
+  border-color: gray;
 }
 
 .image img {
