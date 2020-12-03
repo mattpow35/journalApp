@@ -147,11 +147,15 @@ flex-direction: column;
 
 #likeAndDelete{
 	display: flex;
+	width: inherit;
 	flex-direction: row;
+	border-style: solid;
+	border-color: blue;
 }
 
 #deleteButton {
-  align-self: flex-end;
+   margin-left: auto;
+   justify-self: flex-end;
 }
 
 
