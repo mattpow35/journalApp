@@ -19,8 +19,10 @@
             <h3><b>Posted by: {{entry.name}}</b></h3>
             <p>{{entry.date}}</p>
             <p id="entry">{{entry.message}}</p>
+		<div id="likeAndDelete">
             <p id="likes"> <span class="glyphicon glyphicon-thumbs-up" v-on:click="addLike(entry)"></span>{{entry.likes}}</p>
             <button id="deleteButton" type="button" class="btn btn-danger" v-on:click="deleteItem(entry)">Delete</button>
+</div>
           </div>
 
         </div>
@@ -132,16 +134,23 @@ export default {
 
 
 
+
 #titleCaption {
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+flex-direction: column;
   border-style: solid;
   border-color: gray;
 }
 
 #deleteButton {
-  align-self: right;
+  align-self: flex-end;
+}
+
+#likeAndDelete{
+	display: flex;
+	flex-direction: row;
 }
 
 /* Masonry on large screens */
