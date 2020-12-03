@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const multer = require('multer');
 const upload = multer({
-  dest: '/var/www/journalsharing.mattpowley.com/images/',
+  dest: '../front-end/public/images/',
   limits: {
     fileSize: 10000000
   }
